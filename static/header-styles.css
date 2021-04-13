@@ -1,0 +1,57 @@
+#header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game-title {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 59px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #5F7763;
+}
+
+#name-word {
+    font-size: 20px;
+    line-height: 23px;
+    margin-top: 6px;
+}
+
+#mentorship-word {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 6px;
+}
+
+#project-word {
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 6px;
+    margin-bottom: 11px;
+}
+
+#name-word {
+    font-weight: 600;
+}
+
+#information {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    color: #5F7763;
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: normal;
+}
+
+#green-line-header {
+    width: 771px;
+    height: 0px;
+    border: 1px solid #5F7763;
+    margin-bottom: 35px;
+}

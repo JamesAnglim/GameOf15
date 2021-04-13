@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap");
+
+p {
+  margin: 0;
+}
+
+#wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background: #FAFFF9;
+}
+
+#game-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+
+}
+
+#game-and-top-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#game-board {
+  position: relative;
+  width: 496px;
+  height: 496px;
+  background: #bfdec4;
+  border-radius: 10px;
+}
+
+#leaderboard-submission {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+#nickname-input {
+  width: 189px;
+  height: 37px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+#submit-button {
+  width: 94px;
+  height: 37px;
+  background: #c6e7ff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#big-game-button {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 100px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#big-start-game-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background: rgba(56, 69, 58, 0.92);
+  z-index: 100;
+  cursor: pointer;
+}
+
+#compleated-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 45px;
+  border-radius: 10px;
+  background: rgba(56, 69, 58, 0.92);
+  z-index: 100;
+}
+
+#finished-text {
+  text-align: left;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 45px;
+}
+
+.square {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #ffffa5;
+  border-radius: 10px;
+  font-size: 40px;
+  font-family: "Macondo", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#square1 {
+  top: 30px;
+  left: 30px;
+}
+
+#square2 {
+  top: 30px;
+  left: 142px;
+}
+
+#square3 {
+  top: 30px;
+  left: 254px;
+}
+
+#square4 {
+  top: 30px;
+  left: 366px;
+}
+
+#square5 {
+  top: 142px;
+  left: 30px;
+}
+
+#square6 {
+  top: 142px;
+  left: 142px;
+}
+
+#square7 {
+  top: 142px;
+  left: 254px;
+}
+
+#square8 {
+  top: 142px;
+  left: 366px;
+}
+
+#square9 {
+  top: 254px;
+  left: 30px;
+}
+
+#square10 {
+  top: 254px;
+  left: 142px;
+}
+
+#square11 {
+  top: 254px;
+  left: 254px;
+}
+
+#square12 {
+  top: 254px;
+  left: 366px;
+}
+
+#square13 {
+  top: 366px;
+  left: 30px;
+}
+
+#square14 {
+  top: 366px;
+  left: 142px;
+}
+
+#square15 {
+  top: 366px;
+  left: 254px;
+}
+
+#square-empty {
+  left: 366px;
+  top: 366px;
+  background: #98b89d;
+  border-radius: 10px;
+}
