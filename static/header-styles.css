@@ -17,9 +17,14 @@
 }
 
 #name-word {
+    font-weight: 400;
     font-size: 20px;
     line-height: 23px;
     margin-top: 6px;
+}
+
+#name-highlighted {
+    font-weight: 700;
 }
 
 #mentorship-word {
@@ -33,10 +38,6 @@
     line-height: 16px;
     margin-top: 6px;
     margin-bottom: 11px;
-}
-
-#name-word {
-    font-weight: 600;
 }
 
 #information {

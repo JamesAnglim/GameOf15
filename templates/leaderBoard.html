@@ -1,9 +1,24 @@
-{% extends "layout.html" %}
+<div id="coffee-and-leaderboard-container">
+    <div id="leaderboard">
+      <p id="global-leaderboard">GLOBAL<br/><span id="leaderboard-word">LEADERBOARD</span></p>
+      {% for leaderboardEntry in leaderboard %}
+        <div class="high-score">
+          <!-- left section -->
+          <div id="left-section">
+            <p id="leaderboard-rank">{{ loop.index }}</p>
+            <p id="leaderboard-names">{{ leaderboardEntry.nickname }}</p>
+          </div>
+          <!-- right section -->
+          <div id="right-section">
+            <p id="leaderboard-time">{{ leaderboardEntry.time }}</p>
+            <p id="leaderboard-moves">{{ leaderboardEntry.numMoves }} moves</p>
 
-{% block title %}
-    Log In
-{% endblock %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
 
-{% block main %}
-    
-{% endblock %}
+    <button id="coffee-container" onclick="toggleCreditCardDetails()">
+      <h5 id="coffee-text">☕️ Buy Me A Coffee :)</h5>
+    </button>
+  </div>

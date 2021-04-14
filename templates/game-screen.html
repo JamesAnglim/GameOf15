@@ -8,19 +8,7 @@
 
     <!-- Container -->
     <div id="wrapper">
-      <div id="header">
-        <div id="header-container">
-          <p id="game-title">Game of 15</p>
-          <div id="information">
-            <p id="name-word">Created By <span id="name-word">James Anglim</span></p>
-            <p id="mentorship-word">With mentorship from Seán Anglim</p>
-            <p id="project-word">Harvard CS50 Final Project</p>
-          </div>
-          <!-- <p id="information"><span id="name-word">Created By James Anglim</span><br/><span id="mentorship-word">with mentorship of sean anglim</span><br/><span id="project-word">Harvard CS50 FINAL project</span></p> -->
-        </div>
-        <p id="green-line-header"></p>
-
-      </div>
+      {% include 'header.html' %}
       <div id="game-container">
         <div id="game-and-top-container">
           <div id="top-container">
@@ -50,11 +38,12 @@
 
             <div id="compleated-screen">
               <h5 id="finished-text"></h5>
+              <p id="submit-score-style">Submit your score to the leaderboard:</p>
 
               <form onsubmit="saveToLeaderboard()">
                   <div id="leaderboard-submission">
-                      <input id="nickname-input" name="nickname" placeholder="Enter a nickname" type="text">
-                      <button id="submit-button" type="submit">Submit</button>
+                    <input id="nickname-input" name="nickname" maxlength="10" placeholder="Enter a nickname" type="text">
+                    <button id="submit-button" type="submit">Submit</button>
                   </div>
               </form>
 
@@ -78,35 +67,8 @@
             <div id="square-empty" class="square"></div>
           </div>
         </div>
-        
-        <div id="coffee-and-leaderboard-container">
-          <div id="leaderboard">
-            <p id="global-leaderboard">GLOBAL<br/><span id="leaderboard-word">LEADERBOARD</span></p>
-            {% for leaderboardEntry in leaderboard %}
-              <div class="high-score">
-                <!-- left section -->
-                <div id="left-section">
-                  <p id="leaderboard-rank">{{ loop.index }}</p>
-                  <p id="leaderboard-names">{{ leaderboardEntry.nickname }}</p>
-                </div>
-                <!-- right section -->
-                <div id="right-section">
-                  <p id="leaderboard-time">{{ leaderboardEntry.time }}</p>
-                  <p id="leaderboard-moves">{{ leaderboardEntry.numMoves }} moves</p>
-
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-
-          <button id="coffee-container" onclick="toggleCreditCardDetails">
-            <h5 id="coffee-text"><a href="https://www.buymeacoffee.com/jamesanglim" style="color: black">☕️ Buy Me A Coffee :)</a></h5>
-          </button>
-        </div>
+        {% include 'leaderboard.html' %}
       </div>
-      <div id="footer">
-        <p id="green-line-footer"></p>
-        <img id="footer-img" src="../static/assets/harvard-logo.png">
-      </div>
+      {% include 'footer.html' %}
     </div>
 {% endblock %}

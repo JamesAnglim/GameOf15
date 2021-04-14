@@ -8,8 +8,7 @@ from flask_session.__init__ import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-
-from helpers import apology, login_required, lookup, usd
+from time import sleep
 
 # Configure application
 app = Flask(__name__)
@@ -24,9 +23,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
-# Custom filter
-app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_FILE_DIR"] = mkdtemp()
@@ -48,8 +44,7 @@ def index():
     transformedLeaderboard = transformLeaderboard(leaderboard)
     return render_template("game-screen.html", leaderboard = transformedLeaderboard)
 
-
-@app.route("/leaderboard", methods=["GET", "POST"])
+@app.route("/leaderboard", methods=["POST"])
 def leaderboard():
 
     # User reached route via POST (as by submitting a form via POST)
@@ -57,22 +52,19 @@ def leaderboard():
 
         nickname = request.form.get("nickname")
 
+        if not nickname:
+            return None
+
         moves = request.form.get("moves")
         totalSeconds = request.form.get("totalSeconds")
         currentTime = datetime.datetime.now()
-
         db.execute("INSERT INTO leaderboards(nickname, moves, time, finished_at) VALUES(?,?,?,?)", nickname, moves, totalSeconds, currentTime)
-        leaderboard = db.execute("SELECT * FROM leaderboards ORDER BY time ASC")
-        transformedLeaderboard = transformLeaderboard(leaderboard)
 
-
-        return render_template("game-screen.html", leaderboard = transformedLeaderboard)
-    else:
-        print("GET")
-
+        return render_template("game-screen.html", leaderboard = [])
+    
 def transformLeaderboard(leaderboard):
 
-    leaderboardTransformed = [];
+    leaderboardTransformed = []
 
     j = len(leaderboard)
     for i in range(j):
@@ -92,7 +84,7 @@ def transformLeaderboard(leaderboard):
         time = leaderboardMinutesFlooredStr + ":" + leaderboardSecondsStr;
 
         leaderboardEntryTransformed = {
-            "nickname": leaderboardEntry["nickname"],
+            "nickname": leaderboardEntry["nickname"].title(),
             "time": time,
             "numMoves": leaderboardEntry["moves"]
         }
@@ -100,7 +92,6 @@ def transformLeaderboard(leaderboard):
         leaderboardTransformed.append(leaderboardEntryTransformed)
 
         i += 1
-    print(leaderboardTransformed)
     return leaderboardTransformed
 
 def transformeTimeDigit(digit):

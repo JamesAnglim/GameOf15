@@ -7,16 +7,17 @@
 }
 
 #start-game-button {
-    width: 157px;
-    height: 57px;
-    background: #C6E7FF;
-    border-radius: 10px;
-    border: none;
-    font-size: 20px;
-    font-family: Raleway;
-    font-style: normal;
-    font-weight: bold;
-    cursor: pointer;
+  width: 157px;
+  height: 57px;
+  background: #C6E7FF;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #reset-game-button {
@@ -35,7 +36,7 @@
 #time-container {
     margin-left: 6px;
     background: #DFF3E2;
-  }
+}
   
   #moves-container {
     margin-right: 6px;

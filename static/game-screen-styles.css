@@ -7,7 +7,7 @@ p {
 }
 
 #wrapper {
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 50px;
   display: flex;
   align-items: center;
@@ -24,7 +24,6 @@ p {
   flex-direction: row;
   align-items: center;
   padding: 10px;
-
 }
 
 #game-and-top-container {
@@ -49,18 +48,36 @@ p {
 }
 
 #nickname-input {
+  padding-left: 10px;
   width: 189px;
   height: 37px;
   background: #ffffff;
   border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+#submit-score-style {
+  margin-bottom: 7px;
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  color: #FFFFFF;
+
 }
 
 #submit-button {
+  margin-left: 10px;
   width: 94px;
   height: 37px;
   background: #c6e7ff;
   border-radius: 10px;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 #big-game-button {

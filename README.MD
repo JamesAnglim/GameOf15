@@ -22,3 +22,8 @@ flask run
 Ensure Heroku CLI is installed and you have an account
 To deploy latest changes, run:
 git push heroku master
+
+## Set environment variables
+
+heroku config:set FLASK_APP=application.py
+heroku config:set API_KEY=pk_e60451acfa0841b0ba1e7ea49abffa65

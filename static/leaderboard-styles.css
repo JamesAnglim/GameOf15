@@ -130,11 +130,12 @@
   background: linear-gradient(93.11deg, #FFC1C1 0%, #FF8F8F 100%);
   border-radius: 10px;
   border: none;
+  outline: none;
+  cursor: pointer;
   margin-top: 23px;
 }
 
 #coffee-and-leaderboard-container {
-  
   display: flex;
   flex-direction: column;
   align-items: center;
